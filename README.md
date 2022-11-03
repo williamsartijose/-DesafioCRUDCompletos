@@ -17,14 +17,15 @@ Um cliente possui nome, CPF, renda, data de nascimento, e quantidade de filhos.
 A especificação da entidade Client é mostrada a seguir (você deve seguir à risca os nomes de classe e atributos mostrados no diagrama):
 
 ### Modelo conceitual 
-![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/1.png)
+![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/img/1.png)
 
-![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/2.png)
 
-![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/3.png)
+![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/img/2.png)
 
-![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/4.png)
+![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/img/3.png)
 
-![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/5.png)
+![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/img/4.png)
 
-![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/6.png)
+![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/img/5.png)
+
+![Web 2](https://github.com/williamsartijose/DesafioCRUDCompleto/blob/main/img/6.png)
