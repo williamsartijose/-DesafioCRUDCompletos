@@ -92,6 +92,12 @@ public class Client implements Serializable {
 	}
 
 	@Override
+	public String toString() {
+		return "Client [id=" + id + ", name=" + name + ", cpf=" + cpf + ", income=" + income + ", birthDate="
+				+ birthDate + ", children=" + children + "]";
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
