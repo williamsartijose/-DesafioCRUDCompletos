@@ -16,33 +16,33 @@ public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String name;
-	
 	private String cpf;
 	private Double income;
-	private Instant birthDate;
-	private Instant children;
+	private Instant birtDate;
+	private Integer children;
+
 
 	public Client() {
 		
 	}
 
-	public Client(long id, String name, String cpf, Double income, Instant birthDate, Instant children) {
+	public Client(Long id, String name, String cpf, Double income, Instant birtDate, Integer children) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
 		this.income = income;
-		this.birthDate = birthDate;
+		this.birtDate = birtDate;
 		this.children = children;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -70,31 +70,28 @@ public class Client implements Serializable {
 		this.income = income;
 	}
 
-	public Instant getBirthDate() {
-		return birthDate;
+	public Instant getBirtDate() {
+		return birtDate;
 	}
 
-	public void setBirthDate(Instant birthDate) {
-		this.birthDate = birthDate;
+	public void setBirtDate(Instant birtDate) {
+		this.birtDate = birtDate;
 	}
 
-	public Instant getChildren() {
+	public Integer getChildren() {
 		return children;
 	}
 
-	public void setChildren(Instant children) {
+	public void setChildren(Integer children) {
 		this.children = children;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(birthDate, children, cpf, id, income, name);
-	}
-
-	@Override
-	public String toString() {
-		return "Client [id=" + id + ", name=" + name + ", cpf=" + cpf + ", income=" + income + ", birthDate="
-				+ birthDate + ", children=" + children + "]";
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
 	@Override
@@ -106,11 +103,12 @@ public class Client implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Client other = (Client) obj;
-		return Objects.equals(birthDate, other.birthDate) && Objects.equals(children, other.children)
-				&& Objects.equals(cpf, other.cpf) && id == other.id && Objects.equals(income, other.income)
-				&& Objects.equals(name, other.name);
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
-	
-	
-}
 
+}
