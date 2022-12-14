@@ -1,10 +1,12 @@
 package com.DesafioCrud.DesafioCrudCompleto.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.DesafioCrud.DesafioCrudCompleto.dto.ClientDTO;
 import com.DesafioCrud.DesafioCrudCompleto.entities.Client;
 import com.DesafioCrud.DesafioCrudCompleto.repositories.ClientRepository;
 
@@ -16,8 +18,10 @@ public class ClientService {
 	@Autowired
 	private ClientRepository repository;
 
-	public List<Client> findAll(){ 
-		
-		return repository.findAll();
+	@Transactional(readOnly = true)
+	public Page<ClientDTO> findAllPaged(PageRequest pageRequest) {
+		Page<Client> list = repository.findAll(pageRequest);
+
+		return list.map(x -> new ClientDTO(x));
 	}
 }
